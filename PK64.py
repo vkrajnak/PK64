@@ -191,12 +191,12 @@ def derivs(x,y):
     x : float,
         Time.
 
-    y : ndarray, shape(6,),
-        y=[r1,pr1,r2,pr2,theta, ptheta].
+    y : ndarray, shape(7,),
+        y=[r1,pr1,r2,pr2,theta, ptheta, time].
 
     Returns
     -------
-    dydx : ndarray, shape(6,),
+    dydx : ndarray, shape(7,),
         Vector field for hydrogen exchange.
     """
     dydx=np.zeros(len(y))
@@ -220,13 +220,13 @@ def lin_derivs(x,y):
     x : float,
         Time.
 
-    y : ndarray, shape(6,),
-        y=[r1,pr1,r2,pr2,theta, ptheta].
+    y : ndarray, shape(7,),
+        y=[r1,pr1,r2,pr2,theta, ptheta, time].
 
     Returns
     -------
-    lin : ndarray, shape(6,),
-        Numerically linearised vector field for hydrogen exchange.
+    lin : ndarray, shape(7,),
+        Numerical linearisation of the vector field for hydrogen exchange.
     """
     dydx=derivs(0,y)
     tiny = 1.0e-12
