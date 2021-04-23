@@ -208,8 +208,8 @@ def derivs(x,y):
     dydx[3] = - dV[1] + (y[5]*np.sin(y[4])*y[3]/y[2]**2 \
                 + y[5]*y[5]*(2/(y[2]*y[2]*y[2]) + np.cos(y[4])/(y[0]*y[2]*y[2]) ))/mH
     dydx[4] = ( np.sin(y[4])*(y[1]/y[0]+y[3]/y[2]) + 2*y[5]*(1/(y[0]*y[0]) + 1/(y[2]*y[2]) +np.cos(y[4])/(y[0]*y[2])) )/mH
-    dydx[5] = - dV[2] - (y[1]*y[3]*np.sin(y[4]) - y[5]*np.cos(y[4])*(y[1]/y[0]+y[3]/y[2]) \
-                + y[5]*y[5]*(np.sin(y[4])/(y[0]*y[2]) ))/mH
+    dydx[5] = - dV[2] - ( y[1]*y[3]*np.sin(y[4]) + y[5]*np.cos(y[4])*(y[1]/y[0]+y[3]/y[2]) \
+                - y[5]*y[5]*(np.sin(y[4])/(y[0]*y[2])) )/mH
     dydx[6] = 1
     return dydx
 
